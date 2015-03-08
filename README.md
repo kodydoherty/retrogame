@@ -8,6 +8,12 @@ for self-checking their submission.
 TO START GAME:
 Double click on index.html
 
+CONTROLS:
+UP Arrow: Moves player up one square.
+LEFT Arrow: Moves player left one square.
+RIGHT Arrow: Moves player right one square.
+DOWN Arrow: Moves player down one square.
+
 GOAL:
 Get your player to the water without hitting a bug.
 

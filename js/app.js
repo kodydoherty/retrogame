@@ -3,8 +3,8 @@
 // Player Constants
 var PLAYER_STARTING_X = 200;
 var PLAYER_STARTING_Y = 400;
-var PLAYER_SPEED = 30;
-
+var PLAYER_SPEED_RIGHT_LEFT = 101;
+var PLAYER_SPEED_UP_DOWN = 85;
 //Stage constants
 var CANVAS_WIDTH = 505;
 var X_RIGHT_BOUNDRY = 480;
@@ -17,7 +17,7 @@ var HIT_BOX = 50;
 var ENEMY_LOW_SPEED = 105;
 var ENEMY_MID_SPEED = 130;
 var ENEMY_HIGH_SPEED = 160;
-var E1START = [110, 70];
+var E1START = [110, 50];
 var E2START = [10, 140];
 var E3START = [210, 210];
 var E4START = [220, 140];
@@ -113,8 +113,8 @@ Player.prototype.reset = function() {
 
 // Check if enemy is in players hit box
 Player.prototype.collide = function(enemy) {
-    if ((this.y >= enemy.y - HIT_BOX) && (this.y <= enemy.y)) {
-        if ((this.x <= enemy.x) && (this.x >= enemy.x - HIT_BOX)) {
+    if ((this.y <= enemy.y + HIT_BOX) && (this.y >= enemy.y)) {
+        if ((this.x >= enemy.x) && (this.x <= enemy.x + HIT_BOX)) {
             return true;
         }
     }
@@ -128,16 +128,16 @@ Player.prototype.handleInput = function(dir) {
     // move Player by any direction by 30 pixels
     switch (dir) {
         case 'left':
-            this.x = this.x - PLAYER_SPEED;
+            this.x = this.x - PLAYER_SPEED_RIGHT_LEFT;
             break;
         case 'right':
-            this.x = this.x + PLAYER_SPEED;
+            this.x = this.x + PLAYER_SPEED_RIGHT_LEFT;
             break;
         case 'up':
-            this.y = this.y - PLAYER_SPEED;
+            this.y = this.y - PLAYER_SPEED_UP_DOWN;
             break;
         case 'down':
-            this.y = this.y + PLAYER_SPEED;
+            this.y = this.y + PLAYER_SPEED_UP_DOWN;
             break;
         default:
             break;
