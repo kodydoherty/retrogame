@@ -136,6 +136,11 @@ var Engine = (function(global) {
             }
         }
 
+        // Add Score
+        ctx.font = "20pt Impact";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "white";
+        ctx.fillText("Points: " + player.score,  50, 80);
 
         renderEntities();
     }
@@ -172,7 +177,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-cat-girl.png'
+        'images/char-boy.png'
     ]);
     Resources.onReady(init);
 
